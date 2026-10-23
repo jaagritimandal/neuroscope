@@ -1,0 +1,30 @@
+# Version control
+.git
+.gitignore
+
+# Python artifacts
+__pycache__
+*.py[cod]
+.venv
+venv
+.env
+
+# IDE / OS
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+
+# Raw source workbooks — never ship these
+data/external/
+*.xlsx
+
+# Unnecessary for runtime
+models/
+tests/
+LICENSE
+*.md
+
+# Docker context bloat
+.dockerignore
+Dockerfile
