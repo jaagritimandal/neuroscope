@@ -27,6 +27,7 @@ brain_page       = st.Page("pages/3_brain_metrics.py",   title="Brain Metrics", 
 stats_page       = st.Page("pages/4_statistical_findings.py", title="Statistical Findings", icon="📈")
 model_page       = st.Page("pages/5_model_comparison.py", title="Model Comparison",     icon="🔬")
 interpret_page   = st.Page("pages/6_interpretability.py", title="Interpretability",     icon="🔍")
+simulator_page   = st.Page("pages/8_simulator.py",        title="Educational Simulator", icon="🎛️")
 limits_page      = st.Page("pages/7_limitations.py",      title="Limitations & Provenance", icon="📋")
 
 pg = st.navigation([
@@ -36,6 +37,7 @@ pg = st.navigation([
     stats_page,
     model_page,
     interpret_page,
+    simulator_page,
     limits_page,
 ])
 

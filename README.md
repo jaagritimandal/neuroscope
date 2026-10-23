@@ -224,7 +224,8 @@ neuroscope/
 │   ├── 4_statistical_findings.py   # Mann-Whitney U, Spearman correlation
 │   ├── 5_model_comparison.py       # Cross-validated model results
 │   ├── 6_interpretability.py       # Logistic regression coefficients
-│   └── 7_limitations.py            # Caveats & data provenance
+│   ├── 7_limitations.py            # Caveats & data provenance
+│   └── 8_simulator.py              # Educational simulator (What-If explorer)
 ├── src/
 │   ├── inspect_data.py             # Data audit script
 │   └── analyze_data.py             # Analysis pipeline

@@ -93,5 +93,6 @@ Use the **sidebar** to explore the pages:
 | **Statistical Findings** | Mann–Whitney U tests, Spearman correlation |
 | **Model Comparison** | Cross-validated ROC-AUC and balanced accuracy |
 | **Interpretability** | Logistic regression coefficients |
+| **Educational Simulator** | Interactive what-if parameter simulation and response curves |
 | **Limitations & Provenance** | Data provenance, caveats, and methodology notes |
 """)

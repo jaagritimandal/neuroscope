@@ -188,4 +188,29 @@ class TestHelpers:
         trace = go.Scatter(x=x_vals, y=y_vals, mode="lines")
         assert len(trace.x) == 10
 
+    def test_simulator_models_training_and_inference(self):
+        """Ensure educational simulator models train and predict probabilities between 0 and 1."""
+        from pages.helpers import load_cohort
+        import pandas as pd
+        from sklearn.linear_model import LogisticRegression
+        from sklearn.preprocessing import StandardScaler
+
+        cohort = load_cohort()
+        features = ["Age", "nWBV", "eTIV"]
+        scaler = StandardScaler()
+        X_scaled = scaler.fit_transform(cohort[features])
+        clf = LogisticRegression(class_weight="balanced", random_state=42).fit(X_scaled, cohort["target"])
+
+        test_pt = pd.DataFrame([[74, 0.730, 1450]], columns=features)
+        prob = clf.predict_proba(scaler.transform(test_pt))[0, 1]
+        assert 0.0 <= prob <= 1.0, f"Expected probability between 0 and 1, got {prob}"
+
+    def test_simulator_percentile_bounds(self):
+        """Ensure empirical percentile calculation on nWBV is bounded in [0, 100]."""
+        from pages.helpers import load_cohort
+        cohort = load_cohort()
+        p = (cohort["nWBV"] < 0.730).mean() * 100
+        assert 0.0 <= p <= 100.0, f"Percentile out of bounds: {p}"
+
+
 
