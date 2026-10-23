@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Data: never commit raw or processed datasets
+data/*
+!data/.gitkeep
+!data/external/.gitkeep
+!data/processed/.gitkeep
+
+# Generated outputs
+reports/*
+!reports/.gitkeep
+figures/*
+!figures/.gitkeep
+models/*
+!models/.gitkeep
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
